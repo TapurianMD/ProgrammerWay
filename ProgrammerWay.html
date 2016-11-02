@@ -1,0 +1,228 @@
+<!-- Copyright © 2016, Xerxes Langerudi. All rights reserved. -->
+
+<!doctype html>
+
+<html>
+<head>
+	<title>ProgrammerWay</title>
+</head>
+
+<style>
+
+html, body
+{
+	text-align: left;
+	color: turquoise;
+	height: 95%;
+}
+
+#menu
+{
+	width: 300px;
+	height: 100%;
+	font: 25px Verdana;
+	float: left;
+	background-color: white;
+}
+
+.header
+{
+	width: 300px;
+	padding: 20px;
+	height: 50px;
+	font-size: 30px;
+	color: grey;
+}
+
+.itemDescription
+{
+	width: 276px;
+	padding: 20px;
+	float: left;
+	color: grey;
+}
+
+.itemHolder
+{
+	width: 276px;
+	padding: 20px;
+	float: left;
+	font-size: 20px;
+}
+
+.menuButton
+{
+	border: 1px solid turquoise;
+	font-size: 20px;
+}
+
+.content
+{
+	width: 276px;
+	height: 100%;
+	font: 25px Verdana;
+	float: left;
+	background-color: white;
+}
+
+#study, #exercise, #food, #hygeine, #spouse
+{
+	display: none;
+}
+
+</style>
+
+<body>
+	<div class="header">
+	ProgrammerWay
+	</div>
+
+	<div id="menu">
+		<div class="itemDescription" id="itemDescription1">
+		Through:
+		</div>
+		<div class="itemHolder" id="itemHolder1">
+			<button class="menuButton" onclick="show('study')">Study</button>
+		</div>
+		<div class="itemHolder" id="itemHolder1">
+			<button class="menuButton" onclick="show('exercise')">Exercise</button>
+		</div>
+		<div class="itemHolder" id="itemHolder1">
+			<button class="menuButton" onclick="show('food')">Food</button>
+		</div>
+		<div class="itemHolder" id="itemHolder1">
+			<button class="menuButton" onclick="show('hygeine')">Hygeine</button>
+		</div>
+		<div class="itemHolder" id="itemHolder1">
+			<button class="menuButton" onclick="show('spouse')">Spouse</button>
+		</div>
+	</div>
+	<div class="content" id="study">
+		<div class="header">
+			Study
+		</div>
+		<div class="item">
+			Algorithms
+		</div>
+		<div class="item">
+			Concurrency
+		</div>
+		<div class="item">
+			Usability
+		</div>
+		<div class="item">
+			UI
+		</div>
+		<div class="item">
+			Compression
+		</div>
+		<div class="item">
+			Encryption
+		</div>
+		<div class="item">
+			Networking
+		</div>
+		<div class="item">
+			C Programming
+		</div>
+	</div>
+	<div class="content" id="exercise">
+		<div class="header">
+			Exercise
+		</div>
+		<div class="item">
+			Walking
+		</div>
+		<div class="item">
+			Bicycling
+		</div>
+	</div>
+	<div class="content" id="food">
+		<div class="header">
+			Food
+		</div>
+		<div class="item">
+			Water
+		</div>
+		<div class="item">
+			Cocoa Milk
+		</div>
+		<div class="item">
+			Joghurt
+		</div>
+		<div class="item">
+			Coffee
+		</div>
+		<div class="item">
+			Pasta
+		</div>
+		<div class="item">
+			Fish
+		</div>
+		<div class="item">
+			Banana
+		</div>
+		<div class="item">
+			Apples
+		</div>
+		<div class="item">
+			Pistacious
+		</div>
+		<div class="item">
+			Walnuts
+		</div>
+		<div class="item">
+			Almond
+		</div>
+		<div class="item">
+			Watermelon
+		</div>
+		<div class="item">
+			Sunflower seeds
+		</div>
+	</div>
+	<div class="content" id="hygeine">
+		<div class="header">
+			Hygeine
+		</div>
+		<div class="item">
+			Morning shower
+		</div>
+		<div class="item">
+			Tooth brushing
+		</div>
+		<div class="item">
+			Laundry
+		</div>
+	</div>
+	<div class="content" id="spouse">
+		<div class="header">
+			Spouse
+		</div>
+		<div class="item">
+			(Further advances in the sciences is awaited to answer this)
+		</div>
+	</div>
+
+<script type="text/javascript">
+
+var studyDiv = document.querySelector("#study");
+var exerciseDiv = document.querySelector("#exercise");
+var foodDiv = document.querySelector("#food");
+var hygeineDiv = document.querySelector("#hygeine");
+var spouseDiv = document.querySelector("#spouse");
+
+function show(topic)
+{
+	studyDiv.style.display = topic == "study"? "inline" : "none";
+	exerciseDiv.style.display = topic == "exercise"? "inline" : "none";
+	foodDiv.style.display = topic == "food"? "inline" : "none";
+	hygeineDiv.style.display = topic == "hygeine"? "inline" : "none";
+	spouseDiv.style.display = topic == "spouse"? "inline" : "none";
+}
+
+</script>
+
+</body>
+</html>
+
