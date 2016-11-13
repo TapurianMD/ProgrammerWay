@@ -26,18 +26,18 @@ int main(int argc, char * argv[])
     return 0;
 }
 
-void printArray(short itemNumber, char items[][100])
+void printArray(short size, char items[][100])
 {
     const char preElement[] = "\t";
     const char postElement[] = "\n";
 
     char *all;
 
-    all = calloc(sizeof(char) * itemNumber * 100, '0');
+    all = calloc(sizeof(char) * size * 100, '0');
 
     short i, y, x = 0;
 
-    for (i = 0; i < itemNumber; i++)
+    for (i = 0; i < size; i++)
     {
         for (y = 0; y < 100; y++)
         {
@@ -81,35 +81,30 @@ void showItem(int optionNumber)
     switch (optionNumber)
     {
         case 1:
-        {
             printArray(7, study);
 
             break;
-        }
+        
         case 2:
-        {
             printArray(2, exercise);
 
             break;
-        }
+        
         case 3:
-        {
             printArray(13, food);
 
             break;
-        }
+        
         case 4:
-        {
             printArray(3, hygeine);
 
             break;
-        }
+        
         case 5:
-        {
             printArray(1, spouse);
 
             break;
-        }
+        
     }
 
     printf("\n");
