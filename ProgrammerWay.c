@@ -1,6 +1,7 @@
 /* Copyright آ© 2016, Xerxes Langerudi. All rights reserved */
 
 #include <stdio.h>
+#include <stdlib.h>
 
 void showMenu(void);
 void showItem(int);
@@ -37,17 +38,39 @@ void showMenu()
     printf("Please type the number of one of the options:");
 }
 
-void printArray(int itemNumber, char items[][100])
+void printArray(short itemNumber, char items[][100])
 {
     const char preElement[] = "\t";
     const char postElement[] = "\n";
 
-    short i;
+    char *all;
 
-    for(i = 0; i < itemNumber; i++)
+    all = calloc(sizeof(char) * itemNumber * 100, '0');
+
+    short i, y, x = 0;
+
+    for (i = 0; i < itemNumber; i++)
     {
-        printf("%s%s%s", preElement, items[i], postElement);
+        for (y = 0; y < 100; y++)
+        {
+            char c = items[i][y];
+
+            if (c != '\0')
+            {
+                all[x++] = c;
+            }
+            else
+            {
+                all[x++] = '\n';
+
+                break;
+            }
+        }
     }
+
+    printf("%s", all);
+
+    free(all);
 }
 
 void showItem(int optionNumber)
