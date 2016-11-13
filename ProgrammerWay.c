@@ -1,4 +1,4 @@
-/* Copyright © 2016, ProgrammerWay. All rights reserved */
+/* Copyright آ© 2016, Xerxes Langerudi. All rights reserved */
 
 #include <stdio.h>
 
@@ -7,90 +7,92 @@ void showItem(int);
 
 int main(int argc, char * argv[])
 {
-	printf("ProgrammerWay\n");
+    printf("ProgrammerWay\n");
 
-	int i = 0;
+    int i = 0;
 
-	while (i != 6)
-	{
-		showMenu();
+    while (i != 6)
+    {
+        showMenu();
 
-		scanf("%i", &i);
+        scanf("%i", &i);
 
-		printf("\n");
+        printf("\n");
 
-		showItem(i);
-	}
+        showItem(i);
+    }
 
-	return 0;
+    return 0;
 }
 
 void showMenu()
 {
-	printf("1. Study\n");
-	printf("2. Exercise\n");
-	printf("3. Food\n");
-	printf("4. Hygeine\n");
-	printf("5. Spouse\n");
-	printf("6. Exit\n");
+    printf("1. Study\n");
+    printf("2. Exercise\n");
+    printf("3. Food\n");
+    printf("4. Hygeine\n");
+    printf("5. Spouse\n");
+    printf("6. Exit\n");
 
-	printf("Please type the number of one of the options:");
+    printf("Please type the number of one of the options:");
 }
 
-void iterator(int itemNumber, char items[][100])
+void printArray(int itemNumber, char items[][100])
 {
-	int i;
+    const char preElement[] = "\t";
+    const char postElement[] = "\n";
 
-	for(i = 0; i < itemNumber; i++)
-	{
-		printf("\t%s\n", items[i]);
-	}
+    short i;
+
+    for(i = 0; i < itemNumber; i++)
+    {
+        printf("%s%s%s", preElement, items[i], postElement);
+    }
 }
 
 void showItem(int optionNumber)
 {
-	char study[][100] = {"Algorithms", "Concurrency", "Usability", "UI", "Compression", "Networking", "C Programming"};
-	char exercise[][100] = {"Walking", "Bicycling"};
-	char food[][100] = {"Water", "Cocoa Milk", "Joghurt", "Coffee", "Pasta", "Fish", "Banana", "Apples", "Pistacious", "Walnuts", "Almond", "Watermelon", "Sunflower seeds"};
-	char hygeine[][100] = {"Morning shower", "Tooth brushing", "Laundry"};
-	char spouse[][100] = {"(Further advances in the sciences is awaited to answer this)"};
+    char study[][100] = {"Algorithms", "Concurrency", "Usability", "UI", "Compression", "Networking", "C Programming"};
+    char exercise[][100] = {"Walking", "Bicycling"};
+    char food[][100] = {"Water", "Cocoa Milk", "Joghurt", "Coffee", "Pasta", "Fish", "Banana", "Apples", "Pistacious", "Walnuts", "Almond", "Watermelon", "Sunflower seeds"};
+    char hygeine[][100] = {"Morning shower", "Tooth brushing", "Laundry"};
+    char spouse[][100] = {"(Further advances in the sciences is awaited to answer this)"};
 
-	int i;
+    short i;
 
-	switch (optionNumber)
-	{
-		case 1:
-		{
-			iterator(7, study);
+    switch (optionNumber)
+    {
+        case 1:
+        {
+            printArray(7, study);
 
-			break;
-		}
-		case 2:
-		{
-			iterator(2, exercise);
+            break;
+        }
+        case 2:
+        {
+            printArray(2, exercise);
 
-			break;
-		}
-		case 3:
-		{
-			iterator(13, food);
+            break;
+        }
+        case 3:
+        {
+            printArray(13, food);
 
-			break;
-		}
-		case 4:
-		{
-			iterator(3, hygeine);
+            break;
+        }
+        case 4:
+        {
+            printArray(3, hygeine);
 
-			break;
-		}
-		case 5:
-		{
-			iterator(1, spouse);
+            break;
+        }
+        case 5:
+        {
+            printArray(1, spouse);
 
-			break;
-		}
-	}
+            break;
+        }
+    }
 
-	printf("\n");
+    printf("\n");
 }
-
