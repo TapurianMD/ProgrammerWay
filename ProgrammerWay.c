@@ -26,18 +26,6 @@ int main(int argc, char * argv[])
     return 0;
 }
 
-void showMenu()
-{
-    printf("1. Study\n");
-    printf("2. Exercise\n");
-    printf("3. Food\n");
-    printf("4. Hygeine\n");
-    printf("5. Spouse\n");
-    printf("6. Exit\n");
-
-    printf("Please type the number of one of the options:");
-}
-
 void printArray(short itemNumber, char items[][100])
 {
     const char preElement[] = "\t";
@@ -71,6 +59,13 @@ void printArray(short itemNumber, char items[][100])
     printf("%s", all);
 
     free(all);
+}
+
+void showMenu()
+{
+    char menu[][100] = {"1. Study", "2. Exercise", "3. Food", "4. Hygeine", "5. Spouse", "6. Exit", "Please type the number of one of the options:"};
+
+    printArray(7, menu);
 }
 
 void showItem(int optionNumber)
